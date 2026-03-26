@@ -82,7 +82,7 @@ h2 span{color:var(--gold)}
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 /* Responsive */
-@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}.tl{flex-direction:column;gap:14px}.tl::before{display:none}}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}.tl{display:grid!important;grid-template-columns:1fr 1fr;gap:16px}.tl::before{display:none}.tl-item{max-width:none}}
 @media(max-width:480px){.s{padding:64px 14px 32px}.nav-d{display:none}}
 </style>
 </head>
