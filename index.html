@@ -6,496 +6,328 @@
 <title>Votre site web sur mesure — Tahiti</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-:root{
---navy:#0F1C3F;--navy-l:#1A2D5A;
---gold:#D4A853;--gold-d:#B8922E;--gold-g:rgba(212,168,83,.12);
---w:#FFF;--g50:#F8F9FA;--g100:#F1F3F5;--g200:#E9ECEF;--g400:#ADB5BD;--g600:#6C757D;--g800:#343A40;--g900:#212529;
---green:#22C55E;--blue:#3B82F6;--red:#EF4444;--orange:#F59E0B;
---r:16px;
-}
+:root{--navy:#0F1C3F;--gold:#D4A853;--gold-d:#B8922E;--gold-g:rgba(212,168,83,.12);--w:#FFF;--g50:#F8F9FA;--g100:#F1F3F5;--g200:#E9ECEF;--g400:#ADB5BD;--g600:#6C757D;--g800:#343A40;--g900:#212529;--green:#22C55E;--blue:#3B82F6;--red:#EF4444;--r:16px}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--navy);color:var(--g900);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(15,28,63,.92);backdrop-filter:blur(20px);padding:12px 32px;display:flex;align-items:center;justify-content:space-between}
-.nav-l{font-weight:800;font-size:11px;color:var(--w);letter-spacing:2.5px;text-transform:uppercase}
-.nav-l span{color:var(--gold)}
-.nav-d{display:flex;gap:5px;align-items:center}
-.nav-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s}
-.nav-dot.active{background:var(--gold);width:22px;border-radius:4px}
-.nav-r{font-size:11px;color:rgba(255,255,255,.4);font-weight:500}
-.s{padding:100px 48px 64px;position:relative;overflow:hidden}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(15,28,63,.92);backdrop-filter:blur(20px);padding:10px 20px;display:flex;align-items:center;justify-content:space-between}
+.nav-l{font-weight:800;font-size:10px;color:var(--w);letter-spacing:2px;text-transform:uppercase}.nav-l span{color:var(--gold)}
+.nav-d{display:flex;gap:4px;align-items:center}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s}
+.nav-dot.active{background:var(--gold);width:18px;border-radius:4px}
+.nav-r{font-size:10px;color:rgba(255,255,255,.4)}
+.s{padding:80px 20px 48px;position:relative;overflow:hidden}
 .s-full{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.s-dark{background:var(--navy);color:var(--w)}
-.s-light{background:var(--w)}
-.s-gray{background:var(--g50)}
-.sh{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-h2{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.1;margin-bottom:24px}
+.s-dark{background:var(--navy);color:var(--w)}.s-light{background:var(--w)}.s-gray{background:var(--g50)}
+.sh{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h2{font-size:clamp(22px,5vw,40px);font-weight:900;line-height:1.1;margin-bottom:20px}
 h2 span{color:var(--gold)}
-.s-dark h2{color:var(--w)}
-.s-light h2,.s-gray h2{color:var(--navy)}
-.sub{font-size:15px;line-height:1.7;opacity:.7;max-width:640px}
-.mx{max-width:1200px;margin:0 auto;width:100%}
+.s-dark h2{color:var(--w)}.s-light h2,.s-gray h2{color:var(--navy)}
+.sub{font-size:14px;line-height:1.7;opacity:.7;max-width:600px}
+.mx{max-width:1100px;margin:0 auto;width:100%}
 .center{text-align:center}
-.mb16{margin-bottom:16px}.mb24{margin-bottom:24px}.mb32{margin-bottom:32px}.mb48{margin-bottom:48px}
+.mb24{margin-bottom:24px}.mb32{margin-bottom:32px}.mb40{margin-bottom:40px}
 .cover-bg{position:absolute;inset:0;overflow:hidden}
-.cover-bg::before{content:'';position:absolute;width:800px;height:800px;border-radius:50%;border:1px solid rgba(212,168,83,.08);top:-200px;right:-200px}
 .cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,168,83,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,83,.03) 1px,transparent 1px);background-size:60px 60px}
-.cover-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-g);border:1px solid rgba(212,168,83,.25);border-radius:100px;padding:8px 20px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);position:relative;z-index:1}
-.cover-badge-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-g);border:1px solid rgba(212,168,83,.25);border-radius:100px;padding:6px 16px;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);position:relative;z-index:1}
+.cover-badge-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.cover-title{font-size:clamp(36px,6vw,68px);font-weight:900;color:var(--w);line-height:1.05;margin:28px 0 20px;position:relative;z-index:1}
+.cover-title{font-size:clamp(28px,7vw,60px);font-weight:900;color:var(--w);line-height:1.05;margin:24px 0 16px;position:relative;z-index:1}
 .cover-title em{font-style:normal;color:var(--gold)}
-.cover-sub{font-size:17px;color:rgba(255,255,255,.55);line-height:1.7;max-width:580px;position:relative;z-index:1}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;text-decoration:none}
-.btn-gold{background:var(--gold);color:var(--navy)}
-.btn-gold:hover{background:var(--gold-d);transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--w);border:1px solid rgba(255,255,255,.25)}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-/* Animated counters */
-.counter{font-size:clamp(40px,6vw,64px);font-weight:900;color:var(--gold);line-height:1}
+.cover-sub{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:520px;position:relative;z-index:1}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;text-decoration:none}
+.btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:var(--gold-d)}
+.btn-outline{background:transparent;color:var(--w);border:1px solid rgba(255,255,255,.25)}.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.counter{font-size:clamp(36px,8vw,56px);font-weight:900;color:var(--gold);line-height:1}
 /* Price cards */
-.price-card{background:var(--w);border-radius:20px;padding:36px 28px;border:2px solid var(--g200);transition:all .3s;position:relative;overflow:hidden}
-.price-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.price-card{background:var(--w);border-radius:16px;padding:28px 20px;border:2px solid var(--g200);transition:all .3s;position:relative;overflow:hidden}
+.price-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
 .price-card-pop{border-color:var(--gold);background:linear-gradient(180deg,rgba(212,168,83,.04) 0%,var(--w) 100%)}
-.price-card-pop::before{content:'RECOMMANDE';position:absolute;top:16px;right:-28px;transform:rotate(45deg);background:var(--gold);color:var(--navy);font-size:8px;font-weight:800;letter-spacing:1.5px;padding:4px 36px}
-.price-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
-.price-name{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:16px}
-.price-val{font-size:clamp(32px,4vw,44px);font-weight:900;color:var(--navy);line-height:1}
-.price-unit{font-size:14px;font-weight:500;color:var(--g600);margin-left:4px}
-.price-list{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:10px}
-.price-list li{font-size:13px;color:var(--g800);display:flex;align-items:center;gap:8px;line-height:1.4}
-.price-list li::before{content:'';width:16px;height:16px;border-radius:50%;background:rgba(34,197,94,.12);flex-shrink:0;box-shadow:inset 0 0 0 2px var(--green)}
-/* Phone mockup */
-.phone-mock{width:280px;background:#111;border-radius:36px;padding:10px;box-shadow:0 40px 80px rgba(0,0,0,.4);margin:0 auto}
-.phone-screen{border-radius:28px;overflow:hidden;background:var(--w);height:500px;position:relative}
-.phone-scroll{position:absolute;inset:0;overflow:hidden}
-.phone-scroll img{width:100%;animation:phoneScroll 12s ease-in-out infinite}
-@keyframes phoneScroll{0%,15%{transform:translateY(0)}40%,55%{transform:translateY(-40%)}75%,100%{transform:translateY(0)}}
-.phone-notch{width:120px;height:28px;background:#111;border-radius:0 0 16px 16px;position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:10}
+.price-card-pop::before{content:'RECOMMAND\00C9';position:absolute;top:14px;right:-30px;transform:rotate(45deg);background:var(--gold);color:var(--navy);font-size:8px;font-weight:800;letter-spacing:1px;padding:3px 34px}
+.price-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-d);margin-bottom:6px}
+.price-name{font-size:18px;font-weight:900;color:var(--navy);margin-bottom:12px}
+.price-val{font-size:clamp(26px,6vw,36px);font-weight:900;color:var(--navy);line-height:1}
+.price-unit{font-size:12px;font-weight:500;color:var(--g600);margin-left:4px}
+.price-list{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:8px}
+.price-list li{font-size:12px;color:var(--g800);display:flex;align-items:center;gap:6px;line-height:1.4}
+.price-list li::before{content:'';width:14px;height:14px;border-radius:50%;background:rgba(34,197,94,.12);flex-shrink:0;box-shadow:inset 0 0 0 2px var(--green)}
+/* Argument card */
+.arg{display:flex;gap:14px;align-items:flex-start;padding:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;transition:all .3s}
+.arg:hover{background:rgba(212,168,83,.06);border-color:rgba(212,168,83,.2)}
+.arg-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.arg-t{font-size:13px;font-weight:700;color:var(--w)}
+.arg-d{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.5}
+.arg-b{font-size:11px;color:var(--gold);font-weight:600;margin-top:4px}
 /* Timeline */
 .tl{display:flex;gap:0;position:relative;justify-content:center}
-.tl::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:2px;background:var(--g200)}
-.tl-item{text-align:center;flex:1;position:relative;z-index:1;max-width:200px}
-.tl-dot{width:56px;height:56px;border-radius:50%;background:var(--w);border:3px solid var(--g200);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 12px;transition:all .3s}
-.tl-t{font-size:14px;font-weight:700}.tl-d{font-size:11px;opacity:.5;margin-top:4px}
-/* Portfolio */
-.port-card{border-radius:var(--r);overflow:hidden;border:1px solid var(--g200);transition:all .3s;background:var(--w)}
-.port-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
-.port-img{width:100%;aspect-ratio:16/10;background-size:cover;background-position:top center;border-bottom:1px solid var(--g200)}
-.port-body{padding:16px}
-.port-name{font-size:15px;font-weight:800;color:var(--navy)}
-.port-cat{font-size:11px;font-weight:600;color:var(--gold-d);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
-.port-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:12px;font-weight:600;color:var(--navy);text-decoration:none}
-.port-link:hover{color:var(--gold-d)}
+.tl::before{content:'';position:absolute;top:24px;left:10%;right:10%;height:2px;background:var(--g200)}
+.tl-item{text-align:center;flex:1;position:relative;z-index:1;max-width:180px}
+.tl-dot{width:48px;height:48px;border-radius:50%;background:var(--w);border:3px solid var(--g200);display:flex;align-items:center;justify-content:center;font-size:18px;margin:0 auto 10px}
+.tl-t{font-size:13px;font-weight:700}.tl-d{font-size:10px;opacity:.5;margin-top:3px}
 /* Table */
 .mod-table{width:100%;border-collapse:collapse}
-.mod-table th{text-align:left;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g600);padding:12px 16px;border-bottom:2px solid var(--g200)}
-.mod-table td{padding:14px 16px;font-size:14px;border-bottom:1px solid var(--g100)}
+.mod-table th{text-align:left;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g600);padding:10px 12px;border-bottom:2px solid var(--g200)}
+.mod-table td{padding:12px;font-size:13px;border-bottom:1px solid var(--g100)}
 .mod-table td:last-child{font-weight:800;color:var(--navy);text-align:right;white-space:nowrap}
 /* FAQ */
-.faq{border-bottom:1px solid var(--g200);padding:20px 0}
-.faq-q{font-size:15px;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.faq-q::after{content:'+';font-size:20px;font-weight:300;color:var(--gold);transition:transform .3s}
+.faq{border-bottom:1px solid var(--g200);padding:16px 0}
+.faq-q{font-size:14px;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q::after{content:'+';font-size:18px;font-weight:300;color:var(--gold);transition:transform .3s;flex-shrink:0}
 .faq.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{font-size:13px;color:var(--g600);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
-.faq.open .faq-a{max-height:300px;padding-top:12px}
-/* Before/After */
-.ba-card{border-radius:var(--r);overflow:hidden;border:2px solid var(--g200);transition:all .3s}
-.ba-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.ba-head{padding:14px 20px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
-.ba-body{padding:20px;font-size:13px;line-height:1.6}
-.ba-red{border-color:rgba(239,68,68,.3)}.ba-red .ba-head{background:rgba(239,68,68,.06);color:var(--red)}
-.ba-green{border-color:rgba(34,197,94,.3)}.ba-green .ba-head{background:rgba(34,197,94,.06);color:var(--green)}
-/* Fade in on scroll */
-.fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+.faq-a{font-size:12px;color:var(--g600);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
+.faq.open .faq-a{max-height:300px;padding-top:10px}
+/* Fade */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:900px){
-.g2,.g3,.g4{grid-template-columns:1fr}
-.s{padding:72px 16px 32px}
-.s-full{padding:72px 16px 32px}
-.tl{flex-direction:column;gap:16px}.tl::before{display:none}
-.phone-mock{width:200px}.phone-screen{height:360px}
-.cover-title{font-size:32px!important}
-.cover-sub{font-size:14px}
-h2{font-size:24px!important}
-.sub{font-size:13px}
-.counter{font-size:40px!important}
-.price-card{padding:24px 20px}
-.price-val{font-size:28px!important}
-.price-name{font-size:18px}
-.price-list li{font-size:12px}
-.mod-table td,.mod-table th{padding:10px 8px;font-size:12px}
-.nav{padding:10px 16px}
-.nav-l{font-size:10px}
-.nav-d{display:none}
-.btn{padding:12px 20px;font-size:13px}
-.faq-q{font-size:14px}
-.faq-a{font-size:12px}
-.ba-card .ba-body,.ba-card div[style*="padding:20px"]{font-size:12px}
-.port-card .port-body{padding:12px}
-.port-name{font-size:13px}
-.port-cat{font-size:10px}
-}
-@media(max-width:480px){
-.s{padding:64px 12px 24px}
-.cover-title{font-size:26px!important}
-h2{font-size:20px!important}
-.price-card{padding:20px 16px}
-.g2{gap:12px}
-}
+/* Responsive */
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}.tl{flex-direction:column;gap:14px}.tl::before{display:none}}
+@media(max-width:480px){.s{padding:64px 14px 32px}.nav-d{display:none}}
 </style>
 </head>
 <body>
+<nav class="nav"><div class="nav-l">Sites Web <span>Tahiti</span></div><div class="nav-d" id="navDots"></div><div class="nav-r" id="navCount"></div></nav>
 
-<nav class="nav">
-<div class="nav-l">Sites Web <span>Tahiti</span></div>
-<div class="nav-d" id="navDots"></div>
-<div class="nav-r" id="navCount"></div>
-</nav>
-
-<!-- ===== 1. COVER — CHALLENGER WARMER ===== -->
+<!-- 1. COVER -->
 <section class="s s-full s-dark" id="sl-0" style="text-align:center">
 <div class="cover-bg"><div class="cover-grid"></div></div>
 <div class="cover-badge"><div class="cover-badge-dot"></div> Fait pour vous</div>
-<h1 class="cover-title">J'ai créé votre site.<br><em>Il est déjà en ligne.</em></h1>
-<p class="cover-sub">Je me suis permis de construire une première version gratuite de votre site web. Regardez ce que vos clients verront quand ils vous chercheront sur Google.</p>
-<div style="margin-top:32px;position:relative;z-index:1">
-<a href="#sl-1" class="btn btn-gold">Découvrir</a>
-</div>
+<h1 class="cover-title">J'ai cr&eacute;&eacute; votre site.<br><em>Il est d&eacute;j&agrave; en ligne.</em></h1>
+<p class="cover-sub">Je me suis permis de construire une premi&egrave;re version gratuite de votre site web. Regardez ce que vos clients verront quand ils vous chercheront sur Google.</p>
+<div style="margin-top:28px;position:relative;z-index:1"><a href="#sl-1" class="btn btn-gold">D&eacute;couvrir</a></div>
 </section>
 
-<!-- ===== 2. DEMO MOBILE — LE SITE EN ACTION ===== -->
-<section class="s s-light" id="sl-1">
-<div class="mx">
-<div class="g2" style="align-items:center">
-<div>
-<div class="sh fade-in" style="color:var(--navy)">Votre site</div>
-<h2 class="fade-in">Voici ce que vos clients <span>verront</span></h2>
-<p class="fade-in" style="font-size:14px;color:var(--g600);line-height:1.7;margin-bottom:24px">J'ai utilisé vos couleurs, vos photos Facebook, vos horaires et vos services pour créer ce site. Il est déjà en ligne et fonctionne sur téléphone.</p>
-<div class="fade-in" style="display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;gap:12px;padding:14px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:12px">
-<div style="font-size:20px">&#9989;</div>
-<div style="font-size:13px;color:var(--g800)"><strong style="color:var(--navy)">Vos vraies couleurs</strong> — le design reprend votre identité visuelle</div>
-</div>
-<div style="display:flex;align-items:center;gap:12px;padding:14px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:12px">
-<div style="font-size:20px">&#9989;</div>
-<div style="font-size:13px;color:var(--g800)"><strong style="color:var(--navy)">Vos vraies photos</strong> — prises depuis votre page Facebook</div>
-</div>
-<div style="display:flex;align-items:center;gap:12px;padding:14px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:12px">
-<div style="font-size:20px">&#9989;</div>
-<div style="font-size:13px;color:var(--g800)"><strong style="color:var(--navy)">Vos vrais horaires</strong> — avec ouvert/fermé en temps réel</div>
-</div>
-<div style="display:flex;align-items:center;gap:12px;padding:14px;background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.2);border-radius:12px">
-<div style="font-size:20px">&#128161;</div>
-<div style="font-size:13px;color:var(--g800)"><strong style="color:var(--gold-d)">Gratuit</strong> — cette première version ne vous coute rien</div>
-</div>
-</div>
-</div>
-<div class="fade-in" style="display:flex;justify-content:center">
-<div class="phone-mock">
-<div class="phone-screen">
-<div class="phone-notch"></div>
-<div class="phone-scroll">
-<img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Apercu site" style="opacity:.15" />
-<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center">
-<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Aperçu en direct</div>
-<div style="font-size:18px;font-weight:900;color:var(--navy);margin-bottom:12px;line-height:1.2">Ouvrez le lien<br>sur votre téléphone</div>
-<div style="font-size:11px;color:var(--g600);line-height:1.5">Le vrai site se voit mieux<br>directement sur mobile</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ===== 3. LE PROBLEME — RATIONAL DROWNING ===== -->
-<section class="s s-dark" id="sl-2">
+<!-- 2. POURQUOI UN SITE — Caractéristique / Avantage / Bénéfice -->
+<section class="s s-dark" id="sl-1">
 <div class="mx center">
-<div class="sh">Le problème</div>
-<h2 class="fade-in">Aujourd'hui, vos clients<br><span>ne vous trouvent pas</span></h2>
-<p class="sub center fade-in" style="margin:0 auto 48px;color:rgba(255,255,255,.6)">Quand quelqu'un cherche votre type de commerce sur Google, il tombe sur vos concurrents. Parce qu'eux, ils ont un site.</p>
-
-<!-- Animated counters -->
-<div class="g3 fade-in" style="margin-bottom:48px">
-<div style="text-align:center;padding:32px 20px">
-<div style="display:inline-flex;align-items:baseline"><span class="counter" data-target="87">0</span><span style="font-size:clamp(24px,4vw,40px);font-weight:900;color:var(--gold)">%</span></div>
-<div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-top:8px;color:rgba(255,255,255,.4)">cherchent en ligne avant de se déplacer</div>
-</div>
-<div style="text-align:center;padding:32px 20px">
-<div style="display:inline-flex;align-items:baseline"><span class="counter" data-target="75">0</span><span style="font-size:clamp(24px,4vw,40px);font-weight:900;color:var(--gold)">%</span></div>
-<div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-top:8px;color:rgba(255,255,255,.4)">jugent la crédibilité par le site web</div>
-</div>
-<div style="text-align:center;padding:32px 20px">
-<div style="display:inline-flex;align-items:baseline"><span class="counter" data-target="0">0</span></div>
-<div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-top:8px;color:rgba(255,255,255,.4)">votre nombre de clients via Google aujourd'hui</div>
-</div>
-</div>
-
-<!-- Before / After -->
+<div class="sh">Pourquoi un site web</div>
+<h2 class="fade-in">Ce n'est pas un site.<br>Ce sont <span>des clients en plus.</span></h2>
+<p class="sub center fade-in" style="margin:0 auto 36px;color:rgba(255,255,255,.6)">&laquo; Aujourd'hui, vos clients vous cherchent sur internet avant de se d&eacute;placer. Si vous n'apparaissez pas, ils vont chez votre concurrent. &raquo;</p>
 <div class="g2 fade-in" style="max-width:800px;margin:0 auto">
-<div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden">
-<div style="padding:14px 20px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.08)">Sans site web</div>
-<div style="padding:20px;display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)"><span style="color:var(--red);font-size:14px">&#10005;</span> Invisible sur Google</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)"><span style="color:var(--red);font-size:14px">&#10005;</span> Pas de lien sur Google Maps</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)"><span style="color:var(--red);font-size:14px">&#10005;</span> Infos éparpillées sur des annuaires</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)"><span style="color:var(--red);font-size:14px">&#10005;</span> Pas de tarifs visibles</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)"><span style="color:var(--red);font-size:14px">&#10005;</span> Aucun contrôle sur votre image</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.6)"><span style="color:var(--red);font-size:14px">&#10005;</span> Les clients vont chez le concurrent</div>
-</div>
-</div>
-<div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:16px;overflow:hidden">
-<div style="padding:14px 20px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);border-bottom:1px solid rgba(34,197,94,.15)">Avec votre site</div>
-<div style="padding:20px;display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w)"><span style="color:var(--green);font-size:14px">&#10003;</span> Visible sur Google en première page</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w)"><span style="color:var(--green);font-size:14px">&#10003;</span> Lien direct sur votre fiche Maps</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w)"><span style="color:var(--green);font-size:14px">&#10003;</span> Toutes vos infos au même endroit</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w)"><span style="color:var(--green);font-size:14px">&#10003;</span> Tarifs, photos, horaires à jour</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w)"><span style="color:var(--green);font-size:14px">&#10003;</span> Vous contrôlez votre image</div>
-<div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--w)"><span style="color:var(--green);font-size:14px">&#10003;</span> Les clients viennent chez vous</div>
-</div>
-</div>
+<div class="arg"><div class="arg-icon">&#128269;</div><div><div class="arg-t">Visibilit&eacute; locale imm&eacute;diate</div><div class="arg-d">Votre site appara&icirc;t quand on cherche &laquo; coiffeur Papeete &raquo; ou &laquo; boutique Tahiti &raquo;</div><div class="arg-b">&#8594; Plus de passage sans effort suppl&eacute;mentaire</div></div></div>
+<div class="arg"><div class="arg-icon">&#128336;</div><div><div class="arg-t">Disponible 24h/24</div><div class="arg-d">Horaires, photos, tarifs, contact — accessible m&ecirc;me quand vous &ecirc;tes ferm&eacute;</div><div class="arg-b">&#8594; Des clients gagn&eacute;s m&ecirc;me la nuit ou le week-end</div></div></div>
+<div class="arg"><div class="arg-icon">&#128171;</div><div><div class="arg-t">Image professionnelle</div><div class="arg-d">Design soign&eacute;, adapt&eacute; mobile, vos vraies photos</div><div class="arg-b">&#8594; Plus de cr&eacute;dibilit&eacute; = plus de ventes</div></div></div>
+<div class="arg"><div class="arg-icon">&#9992;&#65039;</div><div><div class="arg-t">Adapt&eacute; aux touristes</div><div class="arg-d">Accessible aux voyageurs qui cherchent avant ou pendant leur s&eacute;jour</div><div class="arg-b">&#8594; Client&egrave;le internationale &agrave; fort pouvoir d'achat</div></div></div>
+<div class="arg"><div class="arg-icon">&#128241;</div><div><div class="arg-t">Contact en 1 clic</div><div class="arg-d">Bouton appel, Messenger, itin&eacute;raire — le client agit imm&eacute;diatement</div><div class="arg-b">&#8594; Moins de perte de clients int&eacute;ress&eacute;s</div></div></div>
+<div class="arg"><div class="arg-icon">&#128170;</div><div><div class="arg-t">Ind&eacute;pendance</div><div class="arg-d">Votre propre site, pas d&eacute;pendant de Facebook ou des algorithmes</div><div class="arg-b">&#8594; Une pr&eacute;sence stable et durable</div></div></div>
 </div>
 </div>
 </section>
 
-<!-- ===== 4. VOS CONCURRENTS — CONSTRUCTIVE TENSION ===== -->
-<section class="s s-light" id="sl-3">
-<div class="mx">
-<div class="center">
-<div class="sh fade-in" style="color:var(--navy)">La réalité</div>
-<h2 class="fade-in">Des commerces comme le vôtre <span>ont deja un site</span></h2>
-<p class="sub mb48 fade-in" style="color:var(--g600);max-width:600px;margin:0 auto 48px">Salons, boutiques, instituts à Papeete — beaucoup ont déjà franchi le pas. Leurs clients les trouvent sur Google.</p>
+<!-- 3. LES STATS -->
+<section class="s s-light" id="sl-2">
+<div class="mx center">
+<div class="sh fade-in" style="color:var(--navy)">Les chiffres</div>
+<h2 class="fade-in">Vos clients vous cherchent.<br><span>Ils ne vous trouvent pas.</span></h2>
+<div class="g3 fade-in" style="margin-bottom:36px">
+<div style="text-align:center;padding:24px 16px;background:var(--navy);border-radius:12px">
+<div style="display:inline-flex;align-items:baseline"><span class="counter" data-target="87">0</span><span style="font-size:clamp(20px,4vw,32px);font-weight:900;color:var(--gold)">%</span></div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:6px;color:rgba(255,255,255,.5)">cherchent en ligne avant d'acheter</div>
 </div>
-<div class="fade-in" style="display:flex;flex-direction:column;gap:12px;max-width:700px;margin:0 auto">
-<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--g50);border-radius:12px;border:1px solid var(--g200)">
-<div style="min-width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--w)">S</div>
-<div style="flex:1"><div style="font-size:14px;font-weight:700;color:var(--navy)">Symbio's</div><div style="font-size:12px;color:var(--g600)">Salon de coiffure &amp; institut</div></div>
-<div style="font-size:11px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:4px 10px;border-radius:6px">A un site</div>
+<div style="text-align:center;padding:24px 16px;background:var(--navy);border-radius:12px">
+<div style="display:inline-flex;align-items:baseline"><span class="counter" data-target="75">0</span><span style="font-size:clamp(20px,4vw,32px);font-weight:900;color:var(--gold)">%</span></div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:6px;color:rgba(255,255,255,.5)">jugent par la qualit&eacute; du site</div>
 </div>
-<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--g50);border-radius:12px;border:1px solid var(--g200)">
-<div style="min-width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--w)">D</div>
-<div style="flex:1"><div style="font-size:14px;font-weight:700;color:var(--navy)">DESSANGE Tahiti</div><div style="font-size:12px;color:var(--g600)">Salon de coiffure</div></div>
-<div style="font-size:11px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:4px 10px;border-radius:6px">A un site</div>
-</div>
-<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--g50);border-radius:12px;border:1px solid var(--g200)">
-<div style="min-width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--w)">S</div>
-<div style="flex:1"><div style="font-size:14px;font-weight:700;color:var(--navy)">Senso by Elo</div><div style="font-size:12px;color:var(--g600)">Institut de beauté</div></div>
-<div style="font-size:11px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:4px 10px;border-radius:6px">A un site</div>
-</div>
-<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--g50);border-radius:12px;border:1px solid var(--g200)">
-<div style="min-width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--w)">T</div>
-<div style="flex:1"><div style="font-size:14px;font-weight:700;color:var(--navy)">TISH Tahiti</div><div style="font-size:12px;color:var(--g600)">Boutique vêtements</div></div>
-<div style="font-size:11px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:4px 10px;border-radius:6px">A un site</div>
-</div>
-<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--g50);border-radius:12px;border:1px solid var(--g200)">
-<div style="min-width:40px;height:40px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--w)">L</div>
-<div style="flex:1"><div style="font-size:14px;font-weight:700;color:var(--navy)">Le Dressing Tahiti</div><div style="font-size:12px;color:var(--g600)">Boutique mode</div></div>
-<div style="font-size:11px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:4px 10px;border-radius:6px">A un site</div>
+<div style="text-align:center;padding:24px 16px;background:var(--navy);border-radius:12px">
+<div style="display:inline-flex;align-items:baseline"><span class="counter" data-target="0">0</span></div>
+<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:6px;color:rgba(255,255,255,.5)">vos clients via Google aujourd'hui</div>
 </div>
 </div>
-<div class="fade-in" style="margin-top:32px;max-width:700px;margin-left:auto;margin-right:auto;background:var(--navy);border-radius:16px;padding:24px;text-align:center">
-<div style="font-size:15px;color:rgba(255,255,255,.7);line-height:1.7">Quand un client cherche <strong style="color:var(--gold)">"salon Papeete"</strong> ou <strong style="color:var(--gold)">"boutique Tahiti"</strong> sur Google, ce sont ces sites qui apparaissent. <strong style="color:var(--w)">Pas le vôtre.</strong></div>
+
+<!-- Concurrents -->
+<div class="fade-in" style="display:flex;flex-direction:column;gap:8px;max-width:600px;margin:0 auto;text-align:left">
+<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-d);margin-bottom:4px;text-align:center">Des commerces comme le v&ocirc;tre ont d&eacute;j&agrave; un site</div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)"><div style="font-size:13px;font-weight:700;color:var(--navy);flex:1">Symbio's</div><div style="font-size:10px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:3px 8px;border-radius:5px">A un site</div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)"><div style="font-size:13px;font-weight:700;color:var(--navy);flex:1">DESSANGE Tahiti</div><div style="font-size:10px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:3px 8px;border-radius:5px">A un site</div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)"><div style="font-size:13px;font-weight:700;color:var(--navy);flex:1">Senso by Elo</div><div style="font-size:10px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:3px 8px;border-radius:5px">A un site</div></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)"><div style="font-size:13px;font-weight:700;color:var(--navy);flex:1">TISH Tahiti</div><div style="font-size:10px;font-weight:600;color:var(--green);background:rgba(34,197,94,.08);padding:3px 8px;border-radius:5px">A un site</div></div>
 </div>
 </div>
 </section>
 
-<!-- ===== 5. ON A DEJA PRIS DE L'AVANCE ===== -->
+<!-- 4. POURQUOI MOI -->
+<section class="s s-dark" id="sl-3">
+<div class="mx center">
+<div class="sh">Pourquoi moi</div>
+<h2 class="fade-in">Je suis sur place.<br><span>Pas une agence du continent.</span></h2>
+<p class="sub center fade-in" style="margin:0 auto 36px;color:rgba(255,255,255,.6)">&laquo; Les agences du continent vendent des sites. Moi, je vous apporte des clients ici, &agrave; Tahiti. &raquo;</p>
+<div class="g2 fade-in" style="max-width:800px;margin:0 auto">
+<div class="arg"><div class="arg-icon">&#128205;</div><div><div class="arg-t">Proximit&eacute; r&eacute;elle</div><div class="arg-d">Je suis &agrave; Papeete. Je peux passer vous voir, comprendre votre commerce.</div><div class="arg-b">&#8594; Un site adapt&eacute; &agrave; la r&eacute;alit&eacute; locale</div></div></div>
+<div class="arg"><div class="arg-icon">&#9889;</div><div><div class="arg-t">R&eacute;activit&eacute;</div><div class="arg-d">M&ecirc;me fuseau horaire, r&eacute;ponse rapide, modifications dans la journ&eacute;e.</div><div class="arg-b">&#8594; Pas d'attente comme avec un prestataire &agrave; distance</div></div></div>
+<div class="arg"><div class="arg-icon">&#127796;</div><div><div class="arg-t">Connaissance du march&eacute;</div><div class="arg-d">Je vis ici. Je comprends vos clients, les touristes, la saisonnalit&eacute;.</div><div class="arg-b">&#8594; Un site qui parle aux clients de Tahiti</div></div></div>
+<div class="arg"><div class="arg-icon">&#129309;</div><div><div class="arg-t">Relation humaine</div><div class="arg-d">&Eacute;change en direct, suivi personnalis&eacute;. Pas une plateforme impersonnelle.</div><div class="arg-b">&#8594; Confiance + accompagnement dans le temps</div></div></div>
+<div class="arg"><div class="arg-icon">&#127873;</div><div><div class="arg-t">Ajustement gratuit &agrave; 6 mois</div><div class="arg-d">Je reviens voir si tout va bien et j'ajuste le site gratuitement.</div><div class="arg-b">&#8594; Votre site reste efficace, pas abandonn&eacute;</div></div></div>
+<div class="arg"><div class="arg-icon">&#128588;</div><div><div class="arg-t">Je m'occupe de tout</div><div class="arg-d">Photos, contenu, mise en ligne — vous ne perdez pas de temps.</div><div class="arg-b">&#8594; Z&eacute;ro prise de t&ecirc;te</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- 5. ON A DEJA PRIS DE L'AVANCE -->
 <section class="s s-gray" id="sl-4">
-<div class="mx">
-<div class="center">
+<div class="mx center">
 <div class="sh fade-in" style="color:var(--navy)">Le processus</div>
-<h2 class="fade-in">On a déjà <span>pris de l'avance</span></h2>
-<p class="sub mb48 fade-in" style="color:var(--g600);max-width:700px;margin:0 auto 48px">J'ai pris la liberté de créer une première version de votre site, gratuitement. Il ne reste qu'a l'ajuster ensemble avec vos vrais tarifs et vos préférences.</p>
-</div>
-<div class="tl fade-in" style="margin-top:24px">
-<div class="tl-item"><div class="tl-dot" style="border-color:var(--green);background:rgba(34,197,94,.08)">&#9989;</div><div class="tl-t" style="color:var(--green)">Déjà fait</div><div class="tl-d">Gratuit</div><div style="font-size:11px;color:var(--g600);margin-top:6px;line-height:1.4">Première version créée avec vos couleurs, vos infos et vos photos</div></div>
-<div class="tl-item"><div class="tl-dot" style="border-color:var(--gold)">&#128172;</div><div class="tl-t" style="color:var(--navy)">Vos ajustements</div><div class="tl-d">On en parle</div><div style="font-size:11px;color:var(--g600);margin-top:6px;line-height:1.4">Vrais tarifs, photos préférées, votre vision. On ajuste ensemble</div></div>
-<div class="tl-item"><div class="tl-dot" style="border-color:var(--navy)">&#128640;</div><div class="tl-t" style="color:var(--navy)">Mise en ligne</div><div class="tl-d">48h</div><div style="font-size:11px;color:var(--g600);margin-top:6px;line-height:1.4">Le site final est en ligne. Vous recevez le lien</div></div>
-<div class="tl-item"><div class="tl-dot" style="border-color:var(--gold)">&#128205;</div><div class="tl-t" style="color:var(--navy)">Google Maps</div><div class="tl-d">Immédiat</div><div style="font-size:11px;color:var(--g600);margin-top:6px;line-height:1.4">On ajoute le site sur votre fiche Google. Les clients vous trouvent</div></div>
+<h2 class="fade-in">On a d&eacute;j&agrave; <span>pris de l'avance</span></h2>
+<p class="sub fade-in" style="color:var(--g600);max-width:600px;margin:0 auto 36px">J'ai pris la libert&eacute; de cr&eacute;er une premi&egrave;re version de votre site, gratuitement. Il ne reste qu'&agrave; l'ajuster ensemble.</p>
+<div class="tl fade-in">
+<div class="tl-item"><div class="tl-dot" style="border-color:var(--green);background:rgba(34,197,94,.08)">&#9989;</div><div class="tl-t" style="color:var(--green)">D&eacute;j&agrave; fait</div><div class="tl-d">Gratuit</div><div style="font-size:10px;color:var(--g600);margin-top:4px;line-height:1.4">Premi&egrave;re version avec vos couleurs et photos</div></div>
+<div class="tl-item"><div class="tl-dot" style="border-color:var(--gold)">&#128172;</div><div class="tl-t" style="color:var(--navy)">Ajustements</div><div class="tl-d">Ensemble</div><div style="font-size:10px;color:var(--g600);margin-top:4px;line-height:1.4">Vos vrais tarifs, votre vision</div></div>
+<div class="tl-item"><div class="tl-dot" style="border-color:var(--navy)">&#128640;</div><div class="tl-t" style="color:var(--navy)">En ligne</div><div class="tl-d">48h</div><div style="font-size:10px;color:var(--g600);margin-top:4px;line-height:1.4">Site final + lien Google Maps</div></div>
+<div class="tl-item"><div class="tl-dot" style="border-color:var(--gold)">&#127873;</div><div class="tl-t" style="color:var(--navy)">Suivi 6 mois</div><div class="tl-d">Gratuit</div><div style="font-size:10px;color:var(--g600);margin-top:4px;line-height:1.4">Ajustement gratuit &agrave; 6 mois</div></div>
 </div>
 </div>
 </section>
 
-<!-- ===== 6. LES OFFRES — TAKE CONTROL ===== -->
+<!-- 6. LES 3 PACKS -->
 <section class="s s-light" id="sl-5">
-<div class="mx">
-<div class="center">
-<div class="sh fade-in" style="color:var(--navy)">L'investissement</div>
+<div class="mx center">
+<div class="sh fade-in" style="color:var(--navy)">Les packs</div>
 <h2 class="fade-in">Un prix fixe, <span>pas d'abonnement</span></h2>
-<p class="sub mb48 fade-in" style="color:var(--g600);max-width:600px;margin:0 auto 48px">Vous payez une seule fois. Le site reste en ligne tant que vous le souhaitez. L'hébergement est gratuit.</p>
-</div>
+<p class="sub fade-in" style="color:var(--g600);max-width:540px;margin:0 auto 36px">Vous payez une seule fois. L'h&eacute;bergement est gratuit. Le site reste en ligne tant que vous le souhaitez.</p>
 <div class="g3 fade-in">
 <div class="price-card">
-<div class="price-tag">Essentiel</div>
+<div class="price-tag">Pack Base</div>
 <div class="price-name">Site Vitrine</div>
-<div class="price-val">70 000<span class="price-unit">XPF</span></div>
+<div class="price-val">70 000 <span class="price-unit">XPF</span></div>
 <ul class="price-list">
-<li>4 à 5 pages sur mesure</li>
-<li>Design à vos couleurs</li>
-<li>Parfait sur téléphone</li>
-<li>Google Maps intégré</li>
+<li>4-5 pages sur mesure</li>
+<li>Design &agrave; vos couleurs</li>
+<li>Parfait sur t&eacute;l&eacute;phone</li>
+<li>Google Maps int&eacute;gr&eacute;</li>
 <li>Bouton appel + Messenger</li>
-<li>Horaires en temps réel</li>
-<li>SEO optimisé</li>
-<li>Hébergement gratuit</li>
+<li>Horaires en temps r&eacute;el</li>
+<li>SEO optimis&eacute;</li>
+<li>H&eacute;bergement gratuit</li>
+<li>Ajustement &agrave; 6 mois inclus</li>
 </ul>
-<div style="margin-top:20px;font-size:12px;color:var(--g600)">Salons, restaurants, boutiques, instituts</div>
+<div style="margin-top:16px;font-size:11px;color:var(--g600)">Salons, restaurants, boutiques, instituts</div>
 </div>
 <div class="price-card price-card-pop">
-<div class="price-tag">Le plus demandé</div>
-<div class="price-name">Site Réservation</div>
-<div class="price-val">120 000<span class="price-unit">XPF</span></div>
+<div class="price-tag">Pack Plus</div>
+<div class="price-name">Site R&eacute;servation</div>
+<div class="price-val">120 000 <span class="price-unit">XPF</span></div>
 <ul class="price-list">
-<li>Tout le Site Vitrine inclus</li>
-<li>Formulaire de réservation</li>
+<li>Tout le Pack Base inclus</li>
+<li>Formulaire de r&eacute;servation</li>
 <li>Notification par email</li>
-<li>Choix du service et du créneau</li>
-<li>Le client reserve, vous confirmez</li>
-<li>Zero changement d'habitude</li>
+<li>Choix du service et cr&eacute;neau</li>
+<li>Le client r&eacute;serve, vous confirmez</li>
+<li>Z&eacute;ro changement d'habitude</li>
 </ul>
-<div style="margin-top:20px;font-size:12px;color:var(--g600)">Restaurants, spas, activites, salons</div>
+<div style="margin-top:16px;font-size:11px;color:var(--g600)">Restaurants, spas, activit&eacute;s, salons</div>
 </div>
 <div class="price-card">
-<div class="price-tag">Complet</div>
+<div class="price-tag">Pack Premium</div>
 <div class="price-name">Site E-commerce</div>
-<div class="price-val">300 000<span class="price-unit">XPF</span></div>
+<div class="price-val">300 000 <span class="price-unit">XPF</span></div>
 <ul class="price-list">
-<li>Tout le Site Vitrine inclus</li>
+<li>Tout le Pack Base inclus</li>
 <li>Catalogue produits</li>
 <li>Panier d'achat</li>
-<li>Paiement en ligne (PayPal)</li>
+<li>Paiement en ligne</li>
 <li>Gestion simple par Excel</li>
-<li>Catégories et filtres</li>
+<li>Cat&eacute;gories et filtres</li>
 </ul>
-<div style="margin-top:20px;font-size:12px;color:var(--g600)">Boutiques, artisans, producteurs</div>
+<div style="margin-top:16px;font-size:11px;color:var(--g600)">Boutiques, artisans, producteurs</div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- ===== 7. CE QUI EST INCLUS ===== -->
-<section class="s s-dark" id="sl-6">
-<div class="mx center">
-<div class="sh">Inclus dans chaque site</div>
-<h2 class="fade-in">Un site <span>vraiment professionnel</span></h2>
-<div class="g3 fade-in" style="margin-top:40px;text-align:left">
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#128241;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Mobile-first</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">90% de vos clients sont sur téléphone</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#128269;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Visible sur Google</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">SEO, meta tags, sitemap</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#128205;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Google Maps</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Carte interactive sur la page contact</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#128172;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Messenger</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Vos clients vous contactent directement</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#128222;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Bouton appel</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Un clic pour appeler</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#128336;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Horaires dynamiques</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Ouvert/fermé en temps réel</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#127760;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Hébergement gratuit</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Aucun frais mensuel</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#9889;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Ultra rapide</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Moins de 2 secondes de chargement</div></div></div>
-<div style="display:flex;gap:12px;align-items:flex-start"><div style="font-size:22px;flex-shrink:0">&#127912;</div><div><div style="font-size:14px;font-weight:700;color:var(--w)">Vos couleurs et photos</div><div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">Design fidèle à votre identité</div></div></div>
-</div>
-</div>
-</section>
-
-<!-- ===== 8. MODIFICATIONS ===== -->
-<section class="s s-light" id="sl-7">
+<!-- 7. MODIFICATIONS -->
+<section class="s s-gray" id="sl-6">
 <div class="mx">
-<div class="g2 fade-in">
-<div>
-<div class="sh" style="color:var(--navy)">Après livraison</div>
-<h2>Modifications <span>à la carte</span></h2>
-<p style="font-size:14px;color:var(--g600);line-height:1.7;margin-bottom:24px">Votre business évolue, votre site aussi. Prix fixe, pas de surprise.</p>
+<div class="fade-in">
+<div class="sh" style="color:var(--navy)">Apr&egrave;s livraison</div>
+<h2>Modifications <span>&agrave; la carte</span></h2>
+<p style="font-size:13px;color:var(--g600);line-height:1.7;margin-bottom:20px">Votre business &eacute;volue, votre site aussi. Prix fixe, pas de surprise.</p>
 <table class="mod-table">
 <thead><tr><th>Modification</th><th>Tarif</th></tr></thead>
 <tbody>
 <tr><td>Texte, horaire, image, carte</td><td>5 000 XPF</td></tr>
-<tr><td>Mise à jour produits via Excel</td><td>10 000 XPF</td></tr>
-<tr><td>Nouvelle page complete</td><td>20 000 XPF</td></tr>
+<tr><td>Mise &agrave; jour produits via Excel</td><td>10 000 XPF</td></tr>
+<tr><td>Nouvelle page compl&egrave;te</td><td>20 000 XPF</td></tr>
 </tbody>
 </table>
 </div>
-<div>
-<div style="background:var(--navy);border-radius:var(--r);padding:28px;height:100%;display:flex;flex-direction:column;justify-content:center">
-<div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Pour les produits</div>
-<div style="font-size:16px;font-weight:700;color:var(--w);margin-bottom:12px">Un Excel simple</div>
-<div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px">Vous remplissez un fichier Excel (nom, prix, taille, description), vous m'envoyez les photos. Je mets tout en ligne. Que ce soit 1 ou 100 produits, c'est le meme prix.</div>
-<div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;font-family:'SF Mono',Monaco,monospace;font-size:11px;color:rgba(255,255,255,.7);line-height:1.8;overflow-x:auto"><pre style="margin:0">| Nom         | Prix      | Taille | Categorie |
-|-------------|-----------|--------|-----------|
-| Robe satin  | 8 500 XPF | S,M,L  | Robes     |
-| Sac tresse  | 4 200 XPF | Unique | Sacs      |
-| Collier or  | 3 800 XPF | 42cm   | Bijoux    |</pre></div>
-</div>
-</div>
+<div class="fade-in" style="margin-top:24px;background:var(--navy);border-radius:var(--r);padding:24px">
+<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Pour les produits</div>
+<div style="font-size:14px;font-weight:700;color:var(--w);margin-bottom:8px">Un Excel simple</div>
+<div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:16px">Vous remplissez un fichier Excel, vous m'envoyez les photos. Que ce soit 1 ou 100 produits, c'est le m&ecirc;me prix.</div>
+<div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px;font-family:'SF Mono',Monaco,monospace;font-size:10px;color:rgba(255,255,255,.7);line-height:1.8;overflow-x:auto;white-space:pre">Nom         | Prix      | Taille | Cat&eacute;gorie
+Robe satin  | 8 500 XPF | S,M,L  | Robes
+Sac tress&eacute;  | 4 200 XPF | Unique | Sacs
+Collier or  | 3 800 XPF | 42cm   | Bijoux</div>
 </div>
 </div>
 </section>
 
-<!-- ===== 9. FAQ ===== -->
+<!-- 8. CE QUI EST INCLUS -->
+<section class="s s-dark" id="sl-7">
+<div class="mx center">
+<div class="sh">Inclus dans chaque pack</div>
+<h2 class="fade-in">Un site <span>vraiment professionnel</span></h2>
+<div class="g2 fade-in" style="margin-top:32px;text-align:left;max-width:700px;margin-left:auto;margin-right:auto">
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#128241;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">Mobile-first</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">90% de vos clients sont sur t&eacute;l&eacute;phone</div></div></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#128269;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">Visible sur Google</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">SEO, meta tags, sitemap</div></div></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#128205;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">Google Maps</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">Carte sur la page contact</div></div></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#128172;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">Messenger</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">Contact direct</div></div></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#128222;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">Bouton appel</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">Un clic pour appeler</div></div></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#128336;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">Horaires dynamiques</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">Ouvert/ferm&eacute; en temps r&eacute;el</div></div></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#127760;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">H&eacute;bergement gratuit</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">Aucun frais mensuel</div></div></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><div style="font-size:18px;flex-shrink:0">&#127912;</div><div><div style="font-size:13px;font-weight:700;color:var(--w)">Vos couleurs et photos</div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">Design fid&egrave;le &agrave; votre identit&eacute;</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- 9. FAQ -->
 <section class="s s-gray" id="sl-8">
-<div class="mx" style="max-width:700px">
-<div class="center">
-<div class="sh fade-in" style="color:var(--navy)">Questions</div>
-<h2 class="fade-in">Ce que vous voulez <span>savoir</span></h2>
-</div>
-<div style="margin-top:40px" class="fade-in">
-<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Combien de temps pour avoir mon site ?</div><div class="faq-a">La première version est deja faite. Apres vos ajustements, le site final est en ligne sous 48h.</div></div>
-<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Est-ce que je peux modifier moi-meme ?</div><div class="faq-a">C'est moi qui fais les modifications, a prix fixe. Vous me dites ce que vous voulez changer, je le fais dans là journee. Simple.</div></div>
-<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">L'hebergement est vraiment gratuit ?</div><div class="faq-a">Oui. Le site est sur une plateforme professionnelle gratuite. Pas de frais mensuels. Si vous voulez un nom de domaine (ex: votreboutique.pf), c'est en supplement.</div></div>
-<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Et si je veux ajouter des produits ?</div><div class="faq-a">Vous remplissez le fichier Excel que je fournis, vous m'envoyez les photos, je mets tout en ligne. 10 000 XPF, que ce soit 1 ou 100 produits.</div></div>
-<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Le site marche sur téléphone ?</div><div class="faq-a">C'est la priorite. Le site est concu d'abord pour le téléphone, puis adapte pour tablette et ordinateur.</div></div>
-<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Comment les clients me trouvent ?</div><div class="faq-a">On ajoute le site sur votre fiche Google Maps et votre page Facebook. Quand quelqu'un cherche votre type de commerce, il tombe sur vous.</div></div>
-<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Je n'ai pas de photos pro...</div><div class="faq-a">Les photos de votre Facebook ou de votre téléphone suffisent. On utilisé vos vraies photos, c'est plus authentique.</div></div>
+<div class="mx" style="max-width:640px">
+<div class="center"><div class="sh fade-in" style="color:var(--navy)">Questions</div><h2 class="fade-in">Ce que vous voulez <span>savoir</span></h2></div>
+<div style="margin-top:32px" class="fade-in">
+<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Combien de temps pour avoir mon site ?</div><div class="faq-a">La premi&egrave;re version est d&eacute;j&agrave; faite. Apr&egrave;s vos ajustements, le site final est en ligne sous 48h.</div></div>
+<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Est-ce que je peux modifier moi-m&ecirc;me ?</div><div class="faq-a">C'est moi qui fais les modifications, &agrave; prix fixe. Vous me dites ce que vous voulez changer, je le fais dans la journ&eacute;e.</div></div>
+<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">L'h&eacute;bergement est vraiment gratuit ?</div><div class="faq-a">Oui. Plateforme professionnelle gratuite. Pas de frais mensuels. Si vous voulez un nom de domaine (votreboutique.pf), c'est en suppl&eacute;ment.</div></div>
+<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Et si je veux ajouter des produits ?</div><div class="faq-a">Vous remplissez le fichier Excel que je fournis, vous m'envoyez les photos. 10 000 XPF, que ce soit 1 ou 100 produits.</div></div>
+<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Le site marche sur t&eacute;l&eacute;phone ?</div><div class="faq-a">C'est la priorit&eacute;. Con&ccedil;u d'abord pour le t&eacute;l&eacute;phone, puis adapt&eacute; tablette et ordinateur.</div></div>
+<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">J'ai d&eacute;j&agrave; &eacute;t&eacute; d&eacute;march&eacute;, c'est quoi la diff&eacute;rence ?</div><div class="faq-a">Je suis sur place &agrave; Papeete, pas une agence du continent. Je connais le march&eacute; local, je peux passer vous voir, et je vous offre un ajustement gratuit &agrave; 6 mois.</div></div>
+<div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Je n'ai pas de photos pro...</div><div class="faq-a">Les photos de votre Facebook ou de votre t&eacute;l&eacute;phone suffisent. C'est plus authentique.</div></div>
 </div>
 </div>
 </section>
 
-<!-- ===== 10. CONTACT ===== -->
+<!-- 10. CONTACT -->
 <section class="s s-full s-dark" id="sl-9" style="text-align:center">
 <div class="cover-bg"><div class="cover-grid"></div></div>
-<div class="sh fade-in" style="position:relative;z-index:1">Prochaine étape</div>
-<h2 class="fade-in" style="position:relative;z-index:1;font-size:clamp(32px,5vw,52px)">On finalise <span>ensemble ?</span></h2>
-<p class="sub center fade-in" style="margin:0 auto 40px;position:relative;z-index:1;color:rgba(255,255,255,.6)">Le site est deja la. Il ne manque plus que vos ajustements : vos vrais tarifs, vos photos préférées, votre touche personnelle.</p>
-<div class="fade-in" style="background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.2);border-radius:20px;padding:40px;max-width:440px;position:relative;z-index:1">
-<div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Contact</div>
-<div style="font-size:22px;font-weight:800;color:var(--w)">Maylin</div>
-<div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;margin-bottom:24px">Sites web sur mesure &middot; Papeete</div>
-<a href="tel:+68987364383" class="btn btn-gold" style="width:100%;justify-content:center;font-size:18px;padding:16px 28px">87 36 43 83</a>
+<div class="sh fade-in" style="position:relative;z-index:1">Prochaine &eacute;tape</div>
+<h2 class="fade-in" style="position:relative;z-index:1;font-size:clamp(26px,6vw,44px)">On finalise <span>ensemble ?</span></h2>
+<p class="sub center fade-in" style="margin:0 auto 32px;position:relative;z-index:1;color:rgba(255,255,255,.6)">Le site est d&eacute;j&agrave; l&agrave;. Il ne manque plus que vos ajustements.</p>
+<div class="fade-in" style="background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.2);border-radius:16px;padding:32px;max-width:380px;position:relative;z-index:1">
+<div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Contact</div>
+<div style="font-size:20px;font-weight:800;color:var(--w)">Maylin</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;margin-bottom:20px">Sites web sur mesure &middot; Papeete</div>
+<a href="tel:+68987364383" class="btn btn-gold" style="width:100%;justify-content:center;font-size:16px;padding:14px 24px">87 36 43 83</a>
 </div>
-<div class="fade-in" style="margin-top:40px;font-size:12px;color:rgba(255,255,255,.2);position:relative;z-index:1">Papeete, Tahiti</div>
+<div class="fade-in" style="margin-top:32px;position:relative;z-index:1">
+<div style="font-size:12px;color:rgba(255,255,255,.3)">Papeete, Tahiti</div>
+<div style="margin-top:16px;padding:16px 24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;max-width:380px;margin-left:auto;margin-right:auto">
+<div style="font-size:11px;color:rgba(255,255,255,.7);line-height:1.6;text-align:center">Je ne vends pas un site internet.<br><strong style="color:var(--gold)">Je vous apporte de la visibilit&eacute;, des clients, et une pr&eacute;sence professionnelle.</strong></div>
+</div>
+</div>
 </section>
 
 <script>
-// Nav dots
-var slides=document.querySelectorAll('.s');
-var dotsC=document.getElementById('navDots');
-var countC=document.getElementById('navCount');
-slides.forEach(function(_,i){var d=document.createElement('div');d.className='nav-dot';d.onclick=function(){slides[i].scrollIntoView({behavior:'smooth'})};dotsC.appendChild(d);});
-function updateNav(){var c=0;slides.forEach(function(s,i){if(s.getBoundingClientRect().top<window.innerHeight/2)c=i;});dotsC.querySelectorAll('.nav-dot').forEach(function(d,i){d.classList.toggle('active',i===c);});countC.textContent=(c+1)+'/'+slides.length;}
+var slides=document.querySelectorAll('.s');var dotsC=document.getElementById('navDots');var countC=document.getElementById('navCount');
+slides.forEach(function(_,i){var d=document.createElement('div');d.className='nav-dot';d.onclick=function(){slides[i].scrollIntoView({behavior:'smooth'})};dotsC.appendChild(d)});
+function updateNav(){var c=0;slides.forEach(function(s,i){if(s.getBoundingClientRect().top<window.innerHeight/2)c=i});dotsC.querySelectorAll('.nav-dot').forEach(function(d,i){d.classList.toggle('active',i===c)});countC.textContent=(c+1)+'/'+slides.length}
 window.addEventListener('scroll',updateNav);updateNav();
-
-// Fade in on scroll
 var fadeEls=document.querySelectorAll('.fade-in');
-var fadeObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');fadeObs.unobserve(e.target);}});},{threshold:0.15});
-fadeEls.forEach(function(el){fadeObs.observe(el);});
-
-// Animated counters
+var fadeObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');fadeObs.unobserve(e.target)}})},{threshold:0.15});
+fadeEls.forEach(function(el){fadeObs.observe(el)});
 var counters=document.querySelectorAll('.counter');
-var counterObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animateCounter(e.target);counterObs.unobserve(e.target);}});},{threshold:0.5});
-counters.forEach(function(c){counterObs.observe(c);});
-function animateCounter(el){
-var target=parseInt(el.getAttribute('data-target'));
-var duration=1500;var start=0;var startTime=null;
-function step(ts){
-if(!startTime)startTime=ts;
-var progress=Math.min((ts-startTime)/duration,1);
-var eased=1-Math.pow(1-progress,3);
-el.textContent=Math.floor(eased*target);
-if(progress<1)requestAnimationFrame(step);
-else el.textContent=target;
-}
-requestAnimationFrame(step);
-}
+var counterObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animateCounter(e.target);counterObs.unobserve(e.target)}})},{threshold:0.5});
+counters.forEach(function(c){counterObs.observe(c)});
+function animateCounter(el){var target=parseInt(el.getAttribute('data-target'));var duration=1500;var startTime=null;function step(ts){if(!startTime)startTime=ts;var progress=Math.min((ts-startTime)/duration,1);el.textContent=Math.floor((1-Math.pow(1-progress,3))*target);if(progress<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
 </script>
 </body>
 </html>
